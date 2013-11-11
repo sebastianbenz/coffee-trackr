@@ -1,16 +1,21 @@
 package org.jnario.coffee
 
-class CoffeeTrackr {
+@Data class CoffeeTrackr {
   
-  new(CoffeeList coffeeList) {
+  CoffeeList coffeeList
+  
+  def calculateConsumptionOf(String name) {
+  	val coffeeOfName = coffeeList.coffeeDrinkers.filter[it.name == name]
+  	coffeeOfName.countCoffees
   }
   
-  def calculateConsumptionOf(String string) {
-    return -1
+  def private countCoffees(Iterable<CoffeeDrinker> coffeeDrinkers){
+  	if(coffeeDrinkers.empty) return 0
+  	coffeeDrinkers.map[coffeeCount].reduce[a, b|a + b]
   }
   
   def overAllConsumption() {
-    return -1
+    return coffeeList.coffeeDrinkers.countCoffees
   }
   
 }

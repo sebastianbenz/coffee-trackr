@@ -43,7 +43,8 @@ public class CoffeeListSpec {
       new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian|\"", "\"Sebastian\"", "1"), _initCoffeeListSpecCoffeeDrinkersCell3(), _initCoffeeListSpecCoffeeDrinkersCell4(), _initCoffeeListSpecCoffeeDrinkersCell5()),
       new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell6(), _initCoffeeListSpecCoffeeDrinkersCell7(), _initCoffeeListSpecCoffeeDrinkersCell8()),
       new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell9(), _initCoffeeListSpecCoffeeDrinkersCell10(), _initCoffeeListSpecCoffeeDrinkersCell11()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"  Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell12(), _initCoffeeListSpecCoffeeDrinkersCell13(), _initCoffeeListSpecCoffeeDrinkersCell14())
+      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"  Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell12(), _initCoffeeListSpecCoffeeDrinkersCell13(), _initCoffeeListSpecCoffeeDrinkersCell14()),
+      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"  Sebastian || \"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell15(), _initCoffeeListSpecCoffeeDrinkersCell16(), _initCoffeeListSpecCoffeeDrinkersCell17())
     );
   }
   
@@ -109,6 +110,18 @@ public class CoffeeListSpec {
     return 2;
   }
   
+  public String _initCoffeeListSpecCoffeeDrinkersCell15() {
+    return "  Sebastian || ";
+  }
+  
+  public String _initCoffeeListSpecCoffeeDrinkersCell16() {
+    return "Sebastian";
+  }
+  
+  public int _initCoffeeListSpecCoffeeDrinkersCell17() {
+    return 2;
+  }
+  
   @Test
   @Named("a coffee drinker is defined by NAME |*")
   @Order(2)
@@ -161,8 +174,7 @@ public class CoffeeListSpec {
   }
   
   public List<CoffeeDrinker> coffeeDrinkers(final CharSequence s) {
-    String _string = s.toString();
-    CoffeeList _parse = CoffeeList.parse(_string);
+    CoffeeList _parse = CoffeeList.parse(s);
     List<CoffeeDrinker> _coffeeDrinkers = _parse.getCoffeeDrinkers();
     return _coffeeDrinkers;
   }

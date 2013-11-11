@@ -19,9 +19,10 @@ public class CoffeeList {
     return this._coffeeDrinkers;
   }
   
-  public static CoffeeList parse(final String string) {
+  public static CoffeeList parse(final CharSequence s) {
     CoffeeList _xblockexpression = null;
     {
+      final String string = s.toString();
       boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(string);
       if (_isNullOrEmpty) {
         List<CoffeeDrinker> _emptyList = CollectionLiterals.<CoffeeDrinker>emptyList();
@@ -45,9 +46,9 @@ public class CoffeeList {
   private static CoffeeDrinker parseCoffeeDrinker(final String string) {
     CoffeeDrinker _xblockexpression = null;
     {
-      String name = string;
+      String name = string.trim();
       int coffeeCount = 0;
-      final int indexOfPipe = string.indexOf("|");
+      final int indexOfPipe = name.indexOf("|");
       boolean _greaterThan = (indexOfPipe > 0);
       if (_greaterThan) {
         int _length = name.length();

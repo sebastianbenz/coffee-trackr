@@ -1,6 +1,7 @@
 package org.jnario.coffee.specs
 
 import org.jnario.coffee.CoffeeList
+import static extension org.jnario.coffee.CoffeeList.*
 
 describe CoffeeList {
 	
@@ -15,6 +16,7 @@ describe CoffeeList {
   	| "Sebastian||"     | "Sebastian"    | 2                   |
   	| "Sebastian ||"    | "Sebastian"    | 2                   |
   	| "  Sebastian ||"  | "Sebastian"    | 2                   |
+  	| "  Sebastian || " | "Sebastian"    | 2                   |
   }
   
   fact "a coffee drinker is defined by NAME |*"{
@@ -34,7 +36,7 @@ describe CoffeeList {
   }
   
   def coffeeDrinkers(CharSequence s){
-  	CoffeeList.parse(s.toString).coffeeDrinkers
+  	s.parse.coffeeDrinkers
   }
 
 }
