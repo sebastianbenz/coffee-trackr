@@ -1,0 +1,14 @@
+package org.jnario.coffee
+
+import org.jnario.coffee.features.*
+import org.jnario.coffee.specs.*
+
+#Coffee Trackr
+
+##Features
+
+- \.*features.*\
+
+##Specs
+
+- \.*specs.*\
