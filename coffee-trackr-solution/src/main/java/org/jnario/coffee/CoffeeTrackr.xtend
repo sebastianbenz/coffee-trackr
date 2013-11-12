@@ -1,11 +1,13 @@
 package org.jnario.coffee
 
+import java.util.List
+
 @Data class CoffeeTrackr {
   
-  CoffeeList coffeeList
+  List<CoffeeDrinker> coffeeList
   
   def calculateConsumptionOf(String name) {
-  	val coffeeOfName = coffeeList.coffeeDrinkers.filter[it.name == name]
+  	val coffeeOfName = coffeeList.filter[it.name == name]
   	coffeeOfName.countCoffees
   }
   
@@ -15,7 +17,7 @@ package org.jnario.coffee
   }
   
   def overAllConsumption() {
-    return coffeeList.coffeeDrinkers.countCoffees
+    return coffeeList.countCoffees
   }
   
 }

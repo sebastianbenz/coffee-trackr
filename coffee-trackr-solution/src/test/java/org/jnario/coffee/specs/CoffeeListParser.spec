@@ -1,9 +1,8 @@
 package org.jnario.coffee.specs
 
-import org.jnario.coffee.CoffeeList
-import static extension org.jnario.coffee.CoffeeList.*
+import org.jnario.coffee.CoffeeListParser
 
-describe CoffeeList {
+describe CoffeeListParser {
 	
   fact "empty string contains no coffee drinkers"{
   	"".coffeeDrinkers should be emptyList
@@ -36,7 +35,7 @@ describe CoffeeList {
   }
   
   def coffeeDrinkers(CharSequence s){
-  	s.parse.coffeeDrinkers
+  	new CoffeeListParser().parse(s.toString)
   }
 
 }

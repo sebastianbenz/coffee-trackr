@@ -1,6 +1,8 @@
 package org.jnario.coffee.features
 
 import org.jnario.coffee.*
+import java.util.List
+import org.jnario.coffee.CoffeeDrinker
 
 Feature: Tracking Coffee Consumption
 
@@ -9,14 +11,16 @@ Feature: Tracking Coffee Consumption
   we want a coffee tracking app
   
   Background:
-   CoffeeList coffeeList 
    CoffeeTrackr coffeeTrackr
+  
+  List<CoffeeDrinker> coffeeList
+  
    Given a coffee list
       '''
       Sebastian |||
       Birgit    ||  
     '''
-     coffeeList = CoffeeList.parse(args.first)
+     coffeeList = new CoffeeListParser().parse(args.first)
     And a coffee trackr
       coffeeTrackr = new CoffeeTrackr(coffeeList)
   

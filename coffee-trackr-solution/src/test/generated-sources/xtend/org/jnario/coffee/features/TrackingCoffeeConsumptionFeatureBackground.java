@@ -1,6 +1,8 @@
 package org.jnario.coffee.features;
 
-import org.jnario.coffee.CoffeeList;
+import java.util.List;
+import org.jnario.coffee.CoffeeDrinker;
+import org.jnario.coffee.CoffeeListParser;
 import org.jnario.coffee.CoffeeTrackr;
 import org.jnario.coffee.features.TrackingCoffeeConsumptionFeature;
 import org.jnario.lib.JnarioIterableExtensions;
@@ -15,9 +17,9 @@ import org.junit.runner.RunWith;
 @Named("Background:")
 @SuppressWarnings("all")
 public class TrackingCoffeeConsumptionFeatureBackground extends TrackingCoffeeConsumptionFeature {
-  CoffeeList coffeeList;
-  
   CoffeeTrackr coffeeTrackr;
+  
+  List<CoffeeDrinker> coffeeList;
   
   @Test
   @Order(0)
@@ -25,8 +27,9 @@ public class TrackingCoffeeConsumptionFeatureBackground extends TrackingCoffeeCo
   public void _givenACoffeeList() {
     StepArguments _stepArguments = new StepArguments("Sebastian |||\nBirgit    ||  \n");
     final StepArguments args = _stepArguments;
+    CoffeeListParser _coffeeListParser = new CoffeeListParser();
     String _first = JnarioIterableExtensions.<String>first(args);
-    CoffeeList _parse = CoffeeList.parse(_first);
+    List<CoffeeDrinker> _parse = _coffeeListParser.parse(_first);
     this.coffeeList = _parse;
   }
   

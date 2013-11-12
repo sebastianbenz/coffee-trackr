@@ -1,7 +1,10 @@
 package org.jnario.coffee.specs;
 
-import org.eclipse.xtend2.lib.StringConcatenation;
-import org.jnario.coffee.CoffeeList;
+import com.google.common.collect.Lists;
+import java.util.Collections;
+import java.util.List;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.jnario.coffee.CoffeeDrinker;
 import org.jnario.coffee.CoffeeTrackr;
 import org.jnario.coffee.specs.CoffeeTrackrSpec;
 import org.jnario.lib.Assert;
@@ -20,8 +23,8 @@ public class CoffeeTrackrCalculateConsumptionOfSpec extends CoffeeTrackrSpec {
   @Named("consumption is 0 if name no present")
   @Order(1)
   public void _consumptionIs0IfNameNoPresent() throws Exception {
-    CoffeeList _parse = CoffeeList.parse("");
-    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(_parse);
+    List<CoffeeDrinker> _emptyList = CollectionLiterals.<CoffeeDrinker>emptyList();
+    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(_emptyList);
     final CoffeeTrackr trackr = _coffeeTrackr;
     int _calculateConsumptionOf = trackr.calculateConsumptionOf("Not present");
     boolean _doubleArrow = Should.<Integer>operator_doubleArrow(Integer.valueOf(_calculateConsumptionOf), Integer.valueOf(0));
@@ -35,15 +38,10 @@ public class CoffeeTrackrCalculateConsumptionOfSpec extends CoffeeTrackrSpec {
   @Named("consumption is sum of drinker\\\'s coffee count")
   @Order(2)
   public void _consumptionIsSumOfDrinkerSCoffeeCount() throws Exception {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Sebastian |||");
-    _builder.newLine();
-    _builder.append("Birgit ||");
-    _builder.newLine();
-    _builder.append("Sebastian ||");
-    _builder.newLine();
-    CoffeeList _parse = CoffeeList.parse(_builder);
-    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(_parse);
+    CoffeeDrinker _coffeeDrinker = new CoffeeDrinker("Sebastian", 5);
+    CoffeeDrinker _coffeeDrinker_1 = new CoffeeDrinker("Birgit", 5);
+    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(
+      Collections.<CoffeeDrinker>unmodifiableList(Lists.<CoffeeDrinker>newArrayList(_coffeeDrinker, _coffeeDrinker_1)));
     final CoffeeTrackr trackr = _coffeeTrackr;
     int _calculateConsumptionOf = trackr.calculateConsumptionOf("Sebastian");
     boolean _doubleArrow = Should.<Integer>operator_doubleArrow(Integer.valueOf(_calculateConsumptionOf), Integer.valueOf(5));

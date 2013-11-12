@@ -8,22 +8,20 @@ import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 import org.jnario.coffee.CoffeeDrinker;
-import org.jnario.coffee.CoffeeList;
 
 @Data
 @SuppressWarnings("all")
 public class CoffeeTrackr {
-  private final CoffeeList _coffeeList;
+  private final List<CoffeeDrinker> _coffeeList;
   
-  public CoffeeList getCoffeeList() {
+  public List<CoffeeDrinker> getCoffeeList() {
     return this._coffeeList;
   }
   
   public int calculateConsumptionOf(final String name) {
     int _xblockexpression = (int) 0;
     {
-      CoffeeList _coffeeList = this.getCoffeeList();
-      List<CoffeeDrinker> _coffeeDrinkers = _coffeeList.getCoffeeDrinkers();
+      List<CoffeeDrinker> _coffeeList = this.getCoffeeList();
       final Function1<CoffeeDrinker,Boolean> _function = new Function1<CoffeeDrinker,Boolean>() {
         public Boolean apply(final CoffeeDrinker it) {
           String _name = it.getName();
@@ -31,7 +29,7 @@ public class CoffeeTrackr {
           return Boolean.valueOf(_equals);
         }
       };
-      final Iterable<CoffeeDrinker> coffeeOfName = IterableExtensions.<CoffeeDrinker>filter(_coffeeDrinkers, _function);
+      final Iterable<CoffeeDrinker> coffeeOfName = IterableExtensions.<CoffeeDrinker>filter(_coffeeList, _function);
       int _countCoffees = this.countCoffees(coffeeOfName);
       _xblockexpression = (_countCoffees);
     }
@@ -65,12 +63,11 @@ public class CoffeeTrackr {
   }
   
   public int overAllConsumption() {
-    CoffeeList _coffeeList = this.getCoffeeList();
-    List<CoffeeDrinker> _coffeeDrinkers = _coffeeList.getCoffeeDrinkers();
-    return this.countCoffees(_coffeeDrinkers);
+    List<CoffeeDrinker> _coffeeList = this.getCoffeeList();
+    return this.countCoffees(_coffeeList);
   }
   
-  public CoffeeTrackr(final CoffeeList coffeeList) {
+  public CoffeeTrackr(final List<CoffeeDrinker> coffeeList) {
     super();
     this._coffeeList = coffeeList;
   }

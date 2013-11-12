@@ -1,7 +1,8 @@
 package org.jnario.coffee.specs;
 
-import org.eclipse.xtend2.lib.StringConcatenation;
-import org.jnario.coffee.CoffeeList;
+import com.google.common.collect.Lists;
+import java.util.Collections;
+import org.jnario.coffee.CoffeeDrinker;
 import org.jnario.coffee.CoffeeTrackr;
 import org.jnario.coffee.specs.CoffeeTrackrSpec;
 import org.jnario.lib.Assert;
@@ -20,19 +21,14 @@ public class CoffeeTrackrOverAllConsumptionSpec extends CoffeeTrackrSpec {
   @Named("overall consumption is sum of all coffees")
   @Order(1)
   public void _overallConsumptionIsSumOfAllCoffees() throws Exception {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Sebastian |||");
-    _builder.newLine();
-    _builder.append("Birgit ||");
-    _builder.newLine();
-    _builder.append("Sebastian ||");
-    _builder.newLine();
-    CoffeeList _parse = CoffeeList.parse(_builder);
-    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(_parse);
+    CoffeeDrinker _coffeeDrinker = new CoffeeDrinker("Sebastian", 5);
+    CoffeeDrinker _coffeeDrinker_1 = new CoffeeDrinker("Birgit", 3);
+    CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(
+      Collections.<CoffeeDrinker>unmodifiableList(Lists.<CoffeeDrinker>newArrayList(_coffeeDrinker, _coffeeDrinker_1)));
     final CoffeeTrackr trackr = _coffeeTrackr;
     int _overAllConsumption = trackr.overAllConsumption();
-    boolean _doubleArrow = Should.<Integer>operator_doubleArrow(Integer.valueOf(_overAllConsumption), Integer.valueOf(7));
-    Assert.assertTrue("\nExpected trackr.overAllConsumption => 7 but"
+    boolean _doubleArrow = Should.<Integer>operator_doubleArrow(Integer.valueOf(_overAllConsumption), Integer.valueOf(8));
+    Assert.assertTrue("\nExpected trackr.overAllConsumption => 8 but"
      + "\n     trackr.overAllConsumption is " + new org.hamcrest.StringDescription().appendValue(Integer.valueOf(_overAllConsumption)).toString()
      + "\n     trackr is " + new org.hamcrest.StringDescription().appendValue(trackr).toString() + "\n", _doubleArrow);
     

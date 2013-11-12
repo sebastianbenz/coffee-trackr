@@ -1,19 +1,13 @@
 package org.jnario.coffee
 
-import java.util.List
-
-@Data class CoffeeList {
+class CoffeeListParser {
   
-  List<CoffeeDrinker> coffeeDrinkers
-  
-  def static CoffeeList parse(CharSequence s) {
-    val string = s.toString
-    if(string.nullOrEmpty) return new CoffeeList(emptyList)
-    val coffeeDrinkers = string.split("\r?\n").map[parseCoffeeDrinker]
-    new CoffeeList(coffeeDrinkers)
+  def parse(String string) {
+    if(string.nullOrEmpty) return emptyList
+    string.split("\r?\n").map[parseCoffeeDrinker]
   }
   
-  def private static parseCoffeeDrinker(String string){
+  def private parseCoffeeDrinker(String string){
     var name = string.trim
     var coffeeCount = 0
     val indexOfPipe = name.indexOf('|')
@@ -23,6 +17,5 @@ import java.util.List
     }
     new CoffeeDrinker(name, coffeeCount);
   }
-  
   
 }
