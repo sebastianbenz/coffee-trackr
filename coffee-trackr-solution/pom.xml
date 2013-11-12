@@ -11,8 +11,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		<xtend.version>2.4.3</xtend.version>
-		<jnario.version>0.6.1</jnario.version>
+		<xtend.version>2.5.0-SNAPSHOT</xtend.version>
+		<jnario.version>1.0.0-SNAPSHOT</jnario.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -109,8 +109,7 @@
 				<version>2.12</version>
 				<configuration>
 					<includes>
-						<include> **\/*Spec.java</include>
-						<include> **\/*Feature.java</include>
+						<include> **\/CoffeeTrackrSuite.java</include>
 						<include> **\/*Test.java</include>
 						<include> **\/*TestCase.java</include>
 					</includes>

@@ -7,7 +7,7 @@ describe CoffeeTrackr {
   
   
   
-  context calculateConsumptionOf{
+  context "calculateConsumptionOf"{
     
     fact "consumption is 0 if name no present"{
       val trackr = new CoffeeTrackr("".parse)
@@ -25,7 +25,7 @@ describe CoffeeTrackr {
     
   }
   
-  context overAllConsumption{
+  context "overAllConsumption"{
     fact "overall consumption is sum of all coffees"{
       val trackr = new CoffeeTrackr('''
         Sebastian |||

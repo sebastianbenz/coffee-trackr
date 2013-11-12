@@ -7,7 +7,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.jnario.coffee.CoffeeDrinker;
 import org.jnario.coffee.CoffeeList;
-import org.jnario.coffee.specs.CoffeeListSpecCoffeeDrinkers;
+import org.jnario.coffee.specs.CoffeeListSpecCoffeeDrinkerExamples;
 import org.jnario.lib.Assert;
 import org.jnario.lib.Each;
 import org.jnario.lib.ExampleTable;
@@ -36,89 +36,89 @@ public class CoffeeListSpec {
     
   }
   
-  public ExampleTable<CoffeeListSpecCoffeeDrinkers> _initCoffeeListSpecCoffeeDrinkers() {
-    return ExampleTable.create("coffeeDrinkers", 
+  public ExampleTable<CoffeeListSpecCoffeeDrinkerExamples> _initCoffeeListSpecCoffeeDrinkerExamples() {
+    return ExampleTable.create("coffeeDrinkerExamples", 
       Arrays.asList("input", "expectedName", "expectedCoffeeCount"), 
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian\"", "\"Sebastian\"", "0"), _initCoffeeListSpecCoffeeDrinkersCell0(), _initCoffeeListSpecCoffeeDrinkersCell1(), _initCoffeeListSpecCoffeeDrinkersCell2()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian|\"", "\"Sebastian\"", "1"), _initCoffeeListSpecCoffeeDrinkersCell3(), _initCoffeeListSpecCoffeeDrinkersCell4(), _initCoffeeListSpecCoffeeDrinkersCell5()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell6(), _initCoffeeListSpecCoffeeDrinkersCell7(), _initCoffeeListSpecCoffeeDrinkersCell8()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell9(), _initCoffeeListSpecCoffeeDrinkersCell10(), _initCoffeeListSpecCoffeeDrinkersCell11()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"  Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell12(), _initCoffeeListSpecCoffeeDrinkersCell13(), _initCoffeeListSpecCoffeeDrinkersCell14()),
-      new CoffeeListSpecCoffeeDrinkers(  Arrays.asList("\"  Sebastian || \"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkersCell15(), _initCoffeeListSpecCoffeeDrinkersCell16(), _initCoffeeListSpecCoffeeDrinkersCell17())
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian\"", "\"Sebastian\"", "0"), _initCoffeeListSpecCoffeeDrinkerExamplesCell0(), _initCoffeeListSpecCoffeeDrinkerExamplesCell1(), _initCoffeeListSpecCoffeeDrinkerExamplesCell2()),
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian|\"", "\"Sebastian\"", "1"), _initCoffeeListSpecCoffeeDrinkerExamplesCell3(), _initCoffeeListSpecCoffeeDrinkerExamplesCell4(), _initCoffeeListSpecCoffeeDrinkerExamplesCell5()),
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkerExamplesCell6(), _initCoffeeListSpecCoffeeDrinkerExamplesCell7(), _initCoffeeListSpecCoffeeDrinkerExamplesCell8()),
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkerExamplesCell9(), _initCoffeeListSpecCoffeeDrinkerExamplesCell10(), _initCoffeeListSpecCoffeeDrinkerExamplesCell11()),
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"  Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkerExamplesCell12(), _initCoffeeListSpecCoffeeDrinkerExamplesCell13(), _initCoffeeListSpecCoffeeDrinkerExamplesCell14()),
+      new CoffeeListSpecCoffeeDrinkerExamples(  Arrays.asList("\"  Sebastian || \"", "\"Sebastian\"", "2"), _initCoffeeListSpecCoffeeDrinkerExamplesCell15(), _initCoffeeListSpecCoffeeDrinkerExamplesCell16(), _initCoffeeListSpecCoffeeDrinkerExamplesCell17())
     );
   }
   
-  protected ExampleTable<CoffeeListSpecCoffeeDrinkers> coffeeDrinkers = _initCoffeeListSpecCoffeeDrinkers();
+  protected ExampleTable<CoffeeListSpecCoffeeDrinkerExamples> coffeeDrinkerExamples = _initCoffeeListSpecCoffeeDrinkerExamples();
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell0() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell0() {
     return "Sebastian";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell1() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell1() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell2() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell2() {
     return 0;
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell3() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell3() {
     return "Sebastian|";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell4() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell4() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell5() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell5() {
     return 1;
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell6() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell6() {
     return "Sebastian||";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell7() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell7() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell8() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell8() {
     return 2;
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell9() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell9() {
     return "Sebastian ||";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell10() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell10() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell11() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell11() {
     return 2;
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell12() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell12() {
     return "  Sebastian ||";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell13() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell13() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell14() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell14() {
     return 2;
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell15() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell15() {
     return "  Sebastian || ";
   }
   
-  public String _initCoffeeListSpecCoffeeDrinkersCell16() {
+  public String _initCoffeeListSpecCoffeeDrinkerExamplesCell16() {
     return "Sebastian";
   }
   
-  public int _initCoffeeListSpecCoffeeDrinkersCell17() {
+  public int _initCoffeeListSpecCoffeeDrinkerExamplesCell17() {
     return 2;
   }
   
@@ -126,8 +126,8 @@ public class CoffeeListSpec {
   @Named("a coffee drinker is defined by NAME |*")
   @Order(2)
   public void _aCoffeeDrinkerIsDefinedByNAME() throws Exception {
-    final Procedure1<CoffeeListSpecCoffeeDrinkers> _function = new Procedure1<CoffeeListSpecCoffeeDrinkers>() {
-      public void apply(final CoffeeListSpecCoffeeDrinkers it) {
+    final Procedure1<CoffeeListSpecCoffeeDrinkerExamples> _function = new Procedure1<CoffeeListSpecCoffeeDrinkerExamples>() {
+      public void apply(final CoffeeListSpecCoffeeDrinkerExamples it) {
         String _input = it.getInput();
         List<CoffeeDrinker> _coffeeDrinkers = CoffeeListSpec.this.coffeeDrinkers(_input);
         final CoffeeDrinker coffeeDrinker = JnarioIterableExtensions.<CoffeeDrinker>first(_coffeeDrinkers);
@@ -149,7 +149,7 @@ public class CoffeeListSpec {
         
       }
     };
-    Each.<CoffeeListSpecCoffeeDrinkers>forEach(this.coffeeDrinkers, _function);
+    Each.<CoffeeListSpecCoffeeDrinkerExamples>forEach(this.coffeeDrinkerExamples, _function);
   }
   
   @Test

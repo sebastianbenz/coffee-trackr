@@ -9,7 +9,7 @@ describe CoffeeList {
   	"".coffeeDrinkers should be emptyList
   }
   
-  def coffeeDrinkers{
+  def coffeeDrinkerExamples {
   	| input             | expectedName   | expectedCoffeeCount |
   	| "Sebastian"       | "Sebastian"    | 0                   |
   	| "Sebastian|"      | "Sebastian"    | 1                   |
@@ -20,7 +20,7 @@ describe CoffeeList {
   }
   
   fact "a coffee drinker is defined by NAME |*"{
-  	coffeeDrinkers.forEach[
+  	coffeeDrinkerExamples.forEach[
   		val coffeeDrinker = input.coffeeDrinkers.first
   		coffeeDrinker.name => expectedName
   		coffeeDrinker.coffeeCount => expectedCoffeeCount
