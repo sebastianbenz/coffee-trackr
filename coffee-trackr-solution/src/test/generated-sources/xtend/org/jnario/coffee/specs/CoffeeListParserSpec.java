@@ -44,7 +44,7 @@ public class CoffeeListParserSpec {
       new CoffeeListParserSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian||\"", "\"Sebastian\"", "2"), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell6(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell7(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell8()),
       new CoffeeListParserSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell9(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell10(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell11()),
       new CoffeeListParserSpecCoffeeDrinkerExamples(  Arrays.asList("\"  Sebastian ||\"", "\"Sebastian\"", "2"), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell12(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell13(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell14()),
-      new CoffeeListParserSpecCoffeeDrinkerExamples(  Arrays.asList("\"  Sebastian || \"", "\"Sebastian\"", "2"), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell15(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell16(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell17())
+      new CoffeeListParserSpecCoffeeDrinkerExamples(  Arrays.asList("\"Sebastian || \"", "\"Sebastian\"", "2"), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell15(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell16(), _initCoffeeListParserSpecCoffeeDrinkerExamplesCell17())
     );
   }
   
@@ -111,7 +111,7 @@ public class CoffeeListParserSpec {
   }
   
   public String _initCoffeeListParserSpecCoffeeDrinkerExamplesCell15() {
-    return "  Sebastian || ";
+    return "Sebastian || ";
   }
   
   public String _initCoffeeListParserSpecCoffeeDrinkerExamplesCell16() {

@@ -15,14 +15,14 @@ import org.jnario.runner.Order;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@Named("calculateConsumptionOf")
+@Named("individual consumption")
 @RunWith(ExampleGroupRunner.class)
 @SuppressWarnings("all")
-public class CoffeeTrackrCalculateConsumptionOfSpec extends CoffeeTrackrSpec {
+public class CoffeeTrackrIndividualConsumptionSpec extends CoffeeTrackrSpec {
   @Test
-  @Named("consumption is 0 if name no present")
+  @Named("is 0 if name is not present")
   @Order(1)
-  public void _consumptionIs0IfNameNoPresent() throws Exception {
+  public void _is0IfNameIsNotPresent() throws Exception {
     List<CoffeeDrinker> _emptyList = CollectionLiterals.<CoffeeDrinker>emptyList();
     CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(_emptyList);
     final CoffeeTrackr trackr = _coffeeTrackr;
@@ -35,9 +35,9 @@ public class CoffeeTrackrCalculateConsumptionOfSpec extends CoffeeTrackrSpec {
   }
   
   @Test
-  @Named("consumption is sum of drinker\\\'s coffee count")
+  @Named("is sum of a coffee drinker\\\'s coffee count")
   @Order(2)
-  public void _consumptionIsSumOfDrinkerSCoffeeCount() throws Exception {
+  public void _isSumOfACoffeeDrinkerSCoffeeCount() throws Exception {
     CoffeeDrinker _coffeeDrinker = new CoffeeDrinker("Sebastian", 5);
     CoffeeDrinker _coffeeDrinker_1 = new CoffeeDrinker("Birgit", 5);
     CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(

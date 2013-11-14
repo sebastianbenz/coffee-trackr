@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
 @RunWith(FeatureRunner.class)
 @Named("Background:")
 @SuppressWarnings("all")
-public class TrackingCoffeeConsumptionFeatureBackground extends TrackingCoffeeConsumptionFeature {
+public abstract class TrackingCoffeeConsumptionFeatureBackground extends TrackingCoffeeConsumptionFeature {
   CoffeeTrackr coffeeTrackr;
   
   List<CoffeeDrinker> coffeeList;

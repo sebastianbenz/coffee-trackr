@@ -13,14 +13,14 @@ import org.jnario.runner.Order;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@Named("overAllConsumption")
+@Named("over all consumption")
 @RunWith(ExampleGroupRunner.class)
 @SuppressWarnings("all")
 public class CoffeeTrackrOverAllConsumptionSpec extends CoffeeTrackrSpec {
   @Test
-  @Named("overall consumption is sum of all coffees")
+  @Named("is sum of all coffees")
   @Order(1)
-  public void _overallConsumptionIsSumOfAllCoffees() throws Exception {
+  public void _isSumOfAllCoffees() throws Exception {
     CoffeeDrinker _coffeeDrinker = new CoffeeDrinker("Sebastian", 5);
     CoffeeDrinker _coffeeDrinker_1 = new CoffeeDrinker("Birgit", 3);
     CoffeeTrackr _coffeeTrackr = new CoffeeTrackr(
